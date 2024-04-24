@@ -1,0 +1,52 @@
+{
+  "name": "dynax-monorepo",
+  "version": "1.0.0",
+  "description": "A scaffold that can create cross end and web projects",
+  "homepage": "",
+  "repository": "autohome/dynax",
+  "scripts": {
+    "setup": "rm -rf node_modules packages/*/node_modules && pnpm install && pnpm prebundle && pnpm build",
+    "rebuild": "pnpm install && pnpm run build",
+    "watch": "pnpm --parallel --filter=./packages/* run watch",
+    "build": "pnpm run clean && pnpm -r --filter=./packages/* run build",
+    "pre-bundle": "cd packages/bundles && pnpm build",
+    "clean": "rimraf packages/*/esm",
+    "lint": "eslint --cache --ext .js,.jsx,.ts,.tsx ./",
+    "test": "vitest",
+    "changeset": "changeset",
+    "version": "changeset version && pnpm install:frozen",
+    "release": "changeset publish",
+    "release:beta": "changeset pre enter beta && pnpm run version && pnpm build && pnpm release && changeset pre exit",
+    "release:snapshot": "changeset version --snapshot canary && pnpm install:frozen && pnpm build && pnpm release --tag canary --no-git-tag --snapshot",
+    "prepare": "husky install"
+  },
+  "keywords": [],
+  "author": "huangjihua@autohome.com.cn",
+  "license": "MIT",
+  "devDependencies": {
+    "@actions/exec": "^1.1.1",
+    "@afuteam/eslint-plugin-fe": "^2.0.7",
+    "@changesets/cli": "^2.27.1",
+    "@commitlint/cli": "^19.2.2",
+    "@commitlint/config-conventional": "^19.2.2",
+    "@types/fs-extra": "^11.0.4",
+    "@types/glob": "^8.1.0",
+    "@types/node": "^20.12.7",
+    "@vitest/coverage-v8": "^1.5.0",
+    "chalk": "^5.3.0",
+    "eslint": "^8.57.0",
+    "execa": "^8.0.1",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rimraf": "^5.0.5",
+    "stylelint": "^16.3.1",
+    "typescript": "^5.1.6",
+    "vitest": "^1.5.0"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": "eslint --cache --fix"
+  },
+  "packageManager": "pnpm@7.27.0"
+}
