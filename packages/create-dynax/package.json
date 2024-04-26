@@ -1,0 +1,49 @@
+{
+  "name": "create-dynax",
+  "version": "1.0.0",
+  "description": "npm init dynax",
+  "bin": {
+    "create-dynax": "index.js",
+    "cva": "index.js"
+  },
+  "files": [
+    "index.js",
+    "template-*",
+    "dist"
+  ],
+  "scripts": {
+    "dev": "unbuild --stub",
+    "build": "unbuild",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build",
+    "test":"vitest"
+  },
+  "engines": {
+    "node": ">=16",
+    "pnpm": ">=7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/afu-fe/dynax.git",
+    "directory": "packages/create-dynax"
+  },
+  "bugs": {
+    "url": "https://github.com/afu-fe/dynax/issues"
+  },
+  "keywords": [],
+  "author": "huangjihua",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/cross-spawn": "^6.0.6",
+    "@types/minimist": "^1.2.5",
+    "@types/prompts": "^2.4.9",
+    "cross-spawn": "^7.0.3",
+    "kolorist": "^1.8.0",
+    "minimist": "^1.2.8",
+    "picocolors": "^1.0.0",
+    "prompts": "^2.4.2",
+    "rollup": "4.16.3",
+    "rollup-plugin-license": "^3.3.1",
+    "unbuild": "^2.0.0"
+  }
+}
