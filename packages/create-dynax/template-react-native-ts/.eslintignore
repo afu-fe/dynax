@@ -1,0 +1,12 @@
+/dist
+/.changeset
+/node_modules
+scripts/
+plugins/
+vite.config.ts
+commitlint.config.js
+.prettierrc.js
+.stylelintrc.js
+_.min.js
+_.md
+stats.html
