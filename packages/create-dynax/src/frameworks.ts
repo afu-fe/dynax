@@ -43,24 +43,24 @@ const frameworks = [
     color: cyan,
     variants: [
       {
-        name: 'react-ts',
-        display: 'TypeScript',
-        color: blue,
-      },
-      {
-        name: 'react-swc-ts',
-        display: 'TypeScript + SWC',
-        color: blue,
-      },
-      {
         name: 'react',
         display: 'JavaScript',
         color: yellow,
       },
       {
+        name: 'react-ts',
+        display: 'TypeScript',
+        color: blue,
+      },
+      {
         name: 'react-swc',
         display: 'JavaScript + SWC',
         color: yellow,
+      },
+      {
+        name: 'react-swc-ts',
+        display: 'TypeScript + SWC',
+        color: blue,
       }
     ],
   },

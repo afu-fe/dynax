@@ -16,7 +16,7 @@
     "build": "unbuild",
     "typecheck": "tsc --noEmit",
     "prepublishOnly": "npm run build",
-    "test":"vitest"
+    "test": "vitest"
   },
   "engines": {
     "node": ">=16",

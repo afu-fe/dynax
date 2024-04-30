@@ -4,6 +4,9 @@
   "description": "A scaffold that can create cross end and web projects",
   "homepage": "",
   "repository": "autohome/dynax",
+  "engines": {
+    "node": ">=16"
+  },
   "scripts": {
     "setup": "rm -rf node_modules packages/*/node_modules && pnpm install && pnpm prebundle && pnpm build",
     "rebuild": "pnpm install && pnpm run build",
